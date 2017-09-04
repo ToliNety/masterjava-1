@@ -26,7 +26,7 @@
 > - вместо вложенного цикла для групп юзера сделал пересечение коллекций `Collections.disjoint` и для маскирования пустых групп `Strings.nullToEmpty`
 
 #### 3_3_2_StAX_refactoring.patch
-> вместо `doUntilAny` сделал внутренний класс `ElementProcessor`. С ним парсить XML проще и красивее.
+> вместо метода `doUntilAny` сделал метод `startElement`, ограничивающий поиск родительским элементом.
 
 ### ![video](https://cloud.githubusercontent.com/assets/13649199/13672715/06dbc6ce-e6e7-11e5-81a9-04fbddb9e488.png) 3. <a href="https://drive.google.com/open?id=0B9Ye2auQ_NsFNEMzQTMtZGtZWEk">Optional: XSLT</a>
 #### 3_4_HW2_xslt.patch
