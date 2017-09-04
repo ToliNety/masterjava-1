@@ -22,8 +22,7 @@ public class CityImporter {
         val map = cityDao.getAsMap();
         val newCities = new ArrayList<City>();
 
-        StaxStreamProcessor.ElementProcessor cityProcessor = processor.elementProcessor("City", "Cities");
-        while (cityProcessor.start()) {
+        while (processor.startElement("City", "Cities")) {
             val ref = processor.getAttribute("id");
             if (!map.containsKey(ref)) {
                 newCities.add(new City(null, ref, processor.getText()));

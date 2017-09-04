@@ -83,11 +83,9 @@ public class MainXml {
             StaxStreamProcessor processor = new StaxStreamProcessor(is);
             final Set<String> groupNames = new HashSet<>();
 
-            StaxStreamProcessor.ElementProcessor projectProcessor = processor.elementProcessor("Project", "Projects");
-            while (projectProcessor.start()) {
+            while (processor.startElement("Project", "Projects")) {
                 if (projectName.equals(processor.getAttribute("name"))) {
-                    StaxStreamProcessor.ElementProcessor groupProcessor = processor.elementProcessor("Group", "Project");
-                    while (groupProcessor.start()) {
+                    while (processor.startElement("Group", "Project")) {
                         groupNames.add(processor.getAttribute("name"));
                     }
                     break;
@@ -101,8 +99,7 @@ public class MainXml {
             // Users loop
             Set<User> users = new TreeSet<>(USER_COMPARATOR);
 
-            StaxStreamProcessor.ElementProcessor userProcessor = processor.elementProcessor("User", null);
-            while (userProcessor.start()) {
+            while (processor.startElement("User", null)) {
                 String groupRefs = processor.getAttribute("groupRefs");
                 if (!Collections.disjoint(groupNames, Splitter.on(' ').splitToList(nullToEmpty(groupRefs)))) {
                     User user = new User();

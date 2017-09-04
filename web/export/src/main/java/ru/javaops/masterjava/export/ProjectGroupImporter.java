@@ -25,9 +25,7 @@ public class ProjectGroupImporter {
 
         val newGroups = new ArrayList<Group>();
 
-        StaxStreamProcessor.ElementProcessor projectProcessor = processor.elementProcessor("Project", "Projects");
-        StaxStreamProcessor.ElementProcessor groupProcessor = processor.elementProcessor("Group", "Project");
-        while (projectProcessor.start()) {
+        while (processor.startElement("Project", "Projects")) {
             val pName = processor.getAttribute("name");
             val description = processor.getElementValue("description");
             Project project = projectMap.get(pName);
@@ -36,7 +34,7 @@ public class ProjectGroupImporter {
                 log.info("Insert project " + project);
                 projectDao.insert(project);
             }
-            while (groupProcessor.start()) {
+            while (processor.startElement("Group", "Project")) {
                 val gName = processor.getAttribute("name");
                 if (!groupMap.containsKey(gName)) {
                     newGroups.add(new Group(gName, GroupType.valueOf(processor.getAttribute("type")), project.getId()));
