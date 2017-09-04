@@ -15,7 +15,7 @@
 
 ### ![video](https://cloud.githubusercontent.com/assets/13649199/13672715/06dbc6ce-e6e7-11e5-81a9-04fbddb9e488.png) 3. <a href="https://drive.google.com/file/d/0B9Ye2auQ_NsFbkNoM01TSno1bzA">Импорт Проектов и Групп</a>
 #### Apply 7_3_NEW_HW6_ProjectGroupImporter.patch
-> **!! Внимание, берите патч NEW, который использует `StaxStreamProcessor.ElementProcessor`**
+> **!! Внимание, берите патч NEW, который использует `StaxStreamProcessor.startElement`**
 
 #### Apply 7_4_HW6_refactor_UserImporter.patch
 - Замечание в видео по поводу split: <a href="https://habrahabr.ru/post/326242/">Performance это праздник</a>
