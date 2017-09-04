@@ -24,7 +24,7 @@
 
 #### Apply 6_3_HW5_add_PayloadImporter.patch
 #### Apply 6_4_HW5_NEW_add_CityImporter.patch
-> **!! Внимание, берите патч NEW, который использует `StaxStreamProcessor.ElementProcessor`**
+> **!! Внимание, берите патч NEW, который использует `StaxStreamProcessor.startElement`**
 
 ----------------
 
