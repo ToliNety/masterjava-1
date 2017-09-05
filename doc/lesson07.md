@@ -52,7 +52,7 @@
 #### Apply 7_10_send_group_bulk.patch
 
 ## Домашнее задание
-- Расшарить wsdl для всех модей в `\apps\masterjava\config\wsdl`   
+- Расшарить wsdl для всех модулей в `\apps\masterjava\config\wsdl`   
 - Обновить `mailService.wsdl` в соответствии с реализацией (+пофиксить проблемы) и протестировать работу сервиса
 
 ### Optional
